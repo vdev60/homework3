@@ -2,8 +2,8 @@
 #include <string.h>
 
 //declaration
-int lib_strlen();
-void compare();
+int lib_strlen(char *str);
+void compare(int origin_func, int own_func);
 
 int main(){
   char * str1 = "asdasda";
