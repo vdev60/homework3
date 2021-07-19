@@ -1,6 +1,6 @@
 ## Homework
 
-man <name of function>
+man \<name of function\>
 
 1. FILE\_lib\_strlen.c 
 2. FILE\_lib\_strcpy.c 
