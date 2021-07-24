@@ -14,4 +14,6 @@ man \<name of function\>
 10. FILE\_lib\_tolower.c
 11. FILE\_lib\_toupper.c 
 12. FILE\_lib\_isprint.c
-13. FILE\_lib\_string_to_camel_case.c
+13. FILE\_lib\_string_to_upper.c
+14. FILE\_lib\_string_to_lower.c 
+15. FILE\_lib\_string_to_camel_case.c
