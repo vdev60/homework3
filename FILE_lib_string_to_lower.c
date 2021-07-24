@@ -4,24 +4,24 @@
 #include <string.h>
 
 
-char * string_to_upper(char *str);
+char * string_to_lower(char *str);
 
 int main(){
     char *str = "Tesla MODEL 3";
     char *str1 = "SPACE X!";
 
-    char *str_upper = string_to_upper(str);
-    char *str1_upper = string_to_upper(str1);
+    char *str_lower = string_to_lower(str);
+    char *str1_lower = string_to_lower(str1);
 
-    printf("%s\n", str_upper);
-    printf("%s\n", str1_upper);
+    printf("%s\n", str1_lower);
+    printf("%s\n", str_lower);
     
-    free(str_upper);
-    free(str1_upper);
+    free(str1_lower);
+    free(str_lower);
     return 0;
 }
 
-char * string_to_upper(char *str){
+char * string_to_lower(char *str){
     char * new_str = malloc(strlen(str) +1);
     int i = 0;
     while (str[i]){
