@@ -20,7 +20,7 @@ int main(){
 }
 
 int lib_isprint(int c){
-    if (c >= 32 && c <= 127){
+    if (c > 31 && c < 128){
         return 16384;
     }else{
         return 0;

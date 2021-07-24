@@ -22,7 +22,7 @@ int main(){
 }
 
 int lib_upper(int c){
-    if (c >=97 && c <= 122){
+    if (c >96 && c < 123){
         return c - 32;
     }else{
         return c;

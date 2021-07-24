@@ -6,7 +6,7 @@ int lib_isascii(int c);
 bool compare_isascii(int a, int b);
 
 int main(){
-    char *str = "as24!f3*.!\n ";
+    char *str = "as24!f30 .!\n ";
     bool compare_result;
     int  i = 0;
     while(str[i]){
@@ -19,7 +19,7 @@ int main(){
 }
 
 int lib_isascii(int c){
-    if (c >= 0 && c <= 127){
+    if (c > 0 && c < 128){
         return 1;
     }else{
         return 0;
