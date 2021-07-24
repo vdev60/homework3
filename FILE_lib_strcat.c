@@ -1,24 +1,30 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include "myhead.h"
+
+
 
 char *lib_strcat(char *dest, const char *src);
-void compare(char *str1, char *str2);
+bool compare_strcat(char *str1, char *str2);
 
 int main(){
+    char *test_str[4] = {"BMW", "Tesla", "Porshe", "Suzuki"};
+    bool compare_result;
+    
+    for(int i= 0; i < 4; i ++){
+        char str1[40] = "Model - ";
+        char str2[40] = "Model - ";
+ 
+        strcat(str1,test_str[i]);
+        lib_strcat(str2,test_str[i]);
+ 
+        compare_result = compare_strcat(str1, str2);
+        test_output(compare_result, i);
+    }
 
-    char str1[20] = "Hello ";
-    char * str2 = "World!";
-
-    char str3[20] = "Hello ";
-    char * str4 = "World!";
-
-    strcat(str1,str2);
-    lib_strcat(str3,str4);
-
-    compare(str1,str3);
-
-    //compare("asd","asd");
+    return 0;
 }
 
 char *lib_strcat(char *dest, const char *src){
@@ -31,15 +37,14 @@ char *lib_strcat(char *dest, const char *src){
         i++;
         j++;
     }
+    dest[j] = '\0';
     return dest;
 }
 
-void compare(char *str1, char *str2){
-
+bool compare_strcat(char *str1, char *str2){
     if (!strcmp(str1,str2)){
-        printf("The result is correct!\n");
+        return true;
     }else{
-        printf("The result is wrong!\n");
+        return false;
     }
-
 }

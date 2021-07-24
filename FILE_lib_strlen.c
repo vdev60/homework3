@@ -1,51 +1,26 @@
 #include <stdio.h>
 #include <string.h>
+#include "myhead.h"
+
 
 //declaration
 int lib_strlen(char *str);
-void compare(int origin_func, int own_func);
+int compare_strlen(int origin_func, int own_func);
 
 int main(){
-  char * str1 = "asdasda";
-  char * str2 = "asda";
+  char * str[5] = {"Porshe", "Tesla","Nic\0e","Go0gle","Space10"}; //You can change strings for testing here
+  int compare_result;
 
-
-  compare(lib_strlen(str1), strlen(str1));
-  compare(lib_strlen(str2), strlen(str2));
-
+  for(int i= 0; i < 5; i ++){
+    compare_result = compare_strlen(strlen(str[i]), lib_strlen(str[i]));
+    test_output(compare_result, i);
+  }
 
   return 0;
 }
 
 int lib_strlen(char * str){
 int i = 0;
-/*
-  for (;;)
-  {
-    if (str[i] == 0)
-    {
-      return i;
-    }
-    i++;
-
-*/ 
-
-/*
-  while(i){
-    if (str[i] == 0)
-    {
-      return i;
-    }
-    i++;
-  }
-*/
-
-/*
-  for (int a=0;str[a];a++)
-  {
-    i++;
-  }
-*/
 
   while(str[i]){
     i++;
@@ -55,16 +30,7 @@ int i = 0;
 }
 
 
-void  compare(int origin_func, int own_func){
-  if (origin_func == own_func){
-    printf("Good job!\n");
-    printf("Result strlen function - %d\n", origin_func);
-    printf("Result lib_strlen function - %d\n\n", own_func);
-
-  }else{
-    printf("Opps. You have a problem!\n");
-    printf("Result strlen function - %d\n", origin_func);
-    printf("Result lib_strlen function - %d\n\n", own_func);
-
-  }
+int compare_strlen(int origin_func, int own_func){
+  return (origin_func == own_func) ? 1: 0;
 }
+
